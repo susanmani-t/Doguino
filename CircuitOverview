@@ -1,0 +1,32 @@
+The circuit to be built:
+
+Smart Dog Harness - System Block Diagram
+========================================
+
+    ┌─────────────────┐
+    │   Arduino Uno   │
+    │  (Main MCU)     │
+    └─────────┬───────┘
+              │
+    ┌─────────┼──────────────────────────────┐
+    │         │                              │
+    │    ┌────▼────┐  ┌──────────┐  ┌────────▼─────┐
+    │    │ NEO-6M  │  │ SIM800C  │  │ Pulse Sensor │
+    │    │   GPS   │  │   GSM    │  │   (A0 Pin)   │
+    │    │(Pin 8,9)│  │(Pin 2,3) │  └──────────────┘
+    │    └─────────┘  └──────────┘           │
+    │                                        │
+    │    ┌─────────┐   ┌──────────┐          │
+    └────┤HC-05 BT │   │Push Btn  │──────────┘
+         │Module   │   │(Pin 4)   │
+         └─────────┘   └──────────┘
+
+Data Flow:
+GPS → Location Tracking → Geofencing Algorithm
+Pulse Sensor → Heart Rate → Health Monitoring  
+GSM → SMS Alerts → Emergency Communication
+Button → Emergency Call → Direct Communication
+Bluetooth → Data Transfer → Mobile App
+
+
+Make it compact and fit it into a stitched pocket in your dog harness with a tiny hole for the call button to stick out
